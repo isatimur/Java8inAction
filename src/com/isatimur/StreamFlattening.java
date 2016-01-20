@@ -2,6 +2,7 @@ package com.isatimur;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.IntStream;
 
 /**
@@ -44,6 +45,23 @@ public class StreamFlattening {
                         .filter(j -> (i + j) % 3 == 0)
                         .map(j -> new int[]{i, j}))
                 .forEach(ints -> System.out.println(ints[0] + ", " + ints[1]));
+
+
+        System.out.println("-----------------------");
+        System.out.println("        Optional       ");
+        System.out.println("-----------------------");
+        List<Integer> nums = Arrays.asList(1, 2, 3);
+
+        //with a starting element
+        Integer int1 = nums.stream().reduce(0, ((a, b) -> a + b));
+        Integer int2 = nums.stream().reduce(0, Integer::sum);
+        System.out.println("int1: " + int1);
+        System.out.println("int2: " + int2);
+
+        //optional to wrap possibility of getting NPE
+        Optional<Integer> optional = nums.stream().reduce(((a, b) -> a + b));
+        optional.ifPresent(s -> System.out.println("optional: "+s));
+
 
     }
 
