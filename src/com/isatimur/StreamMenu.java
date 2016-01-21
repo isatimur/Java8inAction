@@ -10,7 +10,7 @@ import static java.util.stream.Collectors.toList;
 /**
  * Created by tisachenko on 14.01.2016.
  */
-public class StreamsSample {
+public class StreamMenu {
 
     private static List<Dish> menu = Arrays.asList(
             new Dish("pork", false, 800, Dish.Type.MEAT),
