@@ -33,7 +33,7 @@ public class Dish {
     }
 
     public String toString() {
-        return name;
+        return "{Dish is " + name + " has " + calories + " calories}";
     }
 
     public enum Type {MEAT, FISH, OTHER}
