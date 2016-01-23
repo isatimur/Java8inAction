@@ -1,6 +1,8 @@
 package com.isatimur;
 
+import java.util.Arrays;
 import java.util.OptionalInt;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 /**
@@ -24,5 +26,20 @@ public class SamplesWithIntStreams {
         int max = maxCalories.orElse(1);
         System.out.println(max);
 
+        Stream<int[]> pythagoreanTriple = IntStream.rangeClosed(1, 100).boxed()
+                .flatMap(a -> (IntStream.rangeClosed(a, 100).filter(b -> Math.sqrt(a * a + b * b) % 1 == 0).boxed()
+                        .map(b -> new int[]{a, b, (int) Math.sqrt(a * a + b * b)}))).limit(3);
+        pythagoreanTriple.forEach(s -> System.out.println(s[0] + ", " + s[1] + s[2]));
+
+        Stream<double[]> pythagonTripleDouble = IntStream.rangeClosed(1, 100).boxed()
+                .flatMap(a -> (IntStream.rangeClosed(a, 100).mapToObj(b -> new double[]{a, b, Math.sqrt(a * a + b * b)})
+                        .filter(t -> t[2] % 1 == 0))).limit(3);
+        pythagonTripleDouble.forEach(s -> System.out.println(s[0] + ", " + s[1] + s[2]));
+
+        int[] number = {2,3,7,5,11,13};
+        int sum = Arrays.stream(number).sum();
+        System.out.println(sum);
     }
+
+
 }
