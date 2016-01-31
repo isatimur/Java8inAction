@@ -14,11 +14,11 @@ public class TestStreamUsage {
 
 
         //creation String's stream
-        Stream<String> stringStream = Stream.of("a","b","c");
+        Stream<String> stringStream = Stream.of("a", "b", "c");
         System.out.println(stringStream.collect(toList()));
 
 
-        String[] array = {"a1","a2","a3"};
+        String[] array = {"a1", "a2", "a3"};
         Stream<String> streamFromArrays = Arrays.stream(array);
         System.out.println(streamFromArrays.collect(toList()));
 

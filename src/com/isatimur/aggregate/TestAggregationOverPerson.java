@@ -14,7 +14,7 @@ public class TestAggregationOverPerson {
                 of(new Person("John", "Doe", 25, 1.80, 80), new Person("Jane", "Doe", 30, 1.69, 60), new Person("John", "Smith", 35, 174, 70)).collect(toList());
         Integer integer = personsList.stream()
                 .filter(person -> person.getFirstName().equals("John"))
-                .map(p -> 1).reduce(0,(a,b)->a+b);
+                .map(p -> 1).reduce(0, (a, b) -> a + b);
 
         long integer2 = personsList.stream()
                 .filter(person -> person.getFirstName().equals("John"))

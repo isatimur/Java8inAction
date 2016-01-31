@@ -14,12 +14,12 @@ import java.util.stream.Stream;
 public class StreamFile {
 
     public static void main(String[] args) {
-        long uniqueWord= 0;
+        long uniqueWord = 0;
 
-        try(Stream<String> lines= Files.lines(Paths.get("wiki_Java.txt"), Charset.defaultCharset())){
-            uniqueWord = lines.flatMap(s-> Arrays.stream(s.split(" "))).filter(s1 -> s1.equals("javafx")).count();
-            System.out.println("The amount of unique words: "+uniqueWord);
-        } catch (IOException io){
+        try (Stream<String> lines = Files.lines(Paths.get("wiki_Java.txt"), Charset.defaultCharset())) {
+            uniqueWord = lines.flatMap(s -> Arrays.stream(s.split(" "))).filter(s1 -> s1.equals("javafx")).count();
+            System.out.println("The amount of unique words: " + uniqueWord);
+        } catch (IOException io) {
             io.printStackTrace();
         }
     }

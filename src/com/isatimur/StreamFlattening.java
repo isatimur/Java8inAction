@@ -60,7 +60,7 @@ public class StreamFlattening {
 
         //optional to wrap possibility of getting NPE
         Optional<Integer> optional = nums.stream().reduce(((a, b) -> a + b));
-        optional.ifPresent(s -> System.out.println("optional: "+s));
+        optional.ifPresent(s -> System.out.println("optional: " + s));
 
 
     }

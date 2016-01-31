@@ -36,7 +36,7 @@ public class SamplesWithIntStreams {
                         .filter(t -> t[2] % 1 == 0))).limit(3);
         pythagonTripleDouble.forEach(s -> System.out.println(s[0] + ", " + s[1] + s[2]));
 
-        int[] number = {2,3,7,5,11,13};
+        int[] number = {2, 3, 7, 5, 11, 13};
         int sum = Arrays.stream(number).sum();
         System.out.println(sum);
     }

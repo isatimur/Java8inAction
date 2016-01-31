@@ -65,12 +65,11 @@ public class Streams5_5 {
         highestValue.ifPresent(s -> System.out.println(s));
 
         System.out.println("8. Find the transaction with the smallest value.");
-        Optional<Transaction> smallestTransaction = transactions.stream().reduce((tr1,tr2)->(tr1.getValue() < tr2.getValue() ? tr1 : tr2));
-        smallestTransaction.ifPresent(s-> System.out.println(s));
+        Optional<Transaction> smallestTransaction = transactions.stream().reduce((tr1, tr2) -> (tr1.getValue() < tr2.getValue() ? tr1 : tr2));
+        smallestTransaction.ifPresent(s -> System.out.println(s));
         System.out.println("//authors' bonus sample");
         Optional<Transaction> smallestTransactionExtraOne = transactions.stream().min(Comparator.comparing(Transaction::getValue));
-        smallestTransactionExtraOne.ifPresent(s-> System.out.println(s));
-
+        smallestTransactionExtraOne.ifPresent(s -> System.out.println(s));
 
 
     }

@@ -40,14 +40,13 @@ public class FilterApples {
         private String color;
 
 
-        public static boolean isBlue(Apple apple) {
-            return apple.getColor().equals("blue");
-        }
-
-
         public Apple(int weight, String color) {
             this.weight = weight;
             this.color = color;
+        }
+
+        public static boolean isBlue(Apple apple) {
+            return apple.getColor().equals("blue");
         }
 
         public String getColor() {
