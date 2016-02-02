@@ -30,11 +30,32 @@ public class Euler2 {
     }
 
 
+    public static BigInteger seqSum() {
+        BigInteger first = BigInteger.ZERO;
+        BigInteger second = BigInteger.ONE;
+        BigInteger sum = BigInteger.ZERO;
+        while (takeWhilePredicate.test(second)) {
+            BigInteger s = second.add(first);
+            first = second;
+            second = s;
+            if (filterPredicate.test(first)) {
+                sum = sum.add(first);
+            }
+        }
+        return sum;
+
+    }
+
+
     public static void main(String[] args) {
-        System.out.println("Sequential");
+        System.out.println("Sequential Iterate");
         System.out.println(seqIterate());
-        System.out.println("Parallel");
+        System.out.println("Parallel Iterate");
         System.out.println(parIterate());
+        System.out.println("Sequential Iterator");
+        System.out.println(seqIterator());
+        System.out.println("Sequential sum old school");
+        System.out.println(seqSum());
     }
 
 
