@@ -3,7 +3,7 @@ package com.isatimur.old.presentation.sergey.kuksenko;
 import java.util.stream.LongStream;
 
 /**
- * Created by Тимакс on 03.02.2016.
+ * Created by tisachenko on 03.02.2016.
  */
 public class Leibniz {
 

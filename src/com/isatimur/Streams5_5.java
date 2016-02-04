@@ -8,7 +8,7 @@ import java.util.Optional;
 import static java.util.stream.Collectors.*;
 
 /**
- * Created by Тимакс on 22.01.2016.
+ * Created by tisachenko on 22.01.2016.
  */
 public class Streams5_5 {
 

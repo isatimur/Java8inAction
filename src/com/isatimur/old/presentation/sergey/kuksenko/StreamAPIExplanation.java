@@ -4,7 +4,7 @@ import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 /**
- * Created by Тимакс on 29.01.2016.
+ * Created by tisachenko on 29.01.2016.
  */
 public class StreamAPIExplanation {
 

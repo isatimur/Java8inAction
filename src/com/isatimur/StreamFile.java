@@ -8,7 +8,7 @@ import java.util.Arrays;
 import java.util.stream.Stream;
 
 /**
- * Created by Тимакс on 24.01.2016.
+ * Created by tisachenko on 24.01.2016.
  * Reading file by using lines method, that transforms all the lines to
  */
 public class StreamFile {

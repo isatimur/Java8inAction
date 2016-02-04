@@ -8,7 +8,7 @@ import static java.util.Comparator.comparingInt;
 import static java.util.stream.Collectors.*;
 
 /**
- * Created by Тимакс on 03.02.2016.
+ * Created by tisachenko on 03.02.2016.
  */
 public class GroupingSamples {
 

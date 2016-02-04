@@ -12,7 +12,7 @@ import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
 
 /**
- * Created by Тимакс on 01.02.2016.
+ * Created by tisachenko on 01.02.2016.
  */
 public class Zipper {
 

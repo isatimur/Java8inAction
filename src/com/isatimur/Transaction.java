@@ -1,7 +1,7 @@
 package com.isatimur;
 
 /**
- * Created by Тимакс on 22.01.2016.
+ * Created by tisachenko on 22.01.2016.
  */
 public class Transaction {
     private final Trader trader;

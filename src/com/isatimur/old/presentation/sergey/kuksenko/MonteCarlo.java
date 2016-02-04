@@ -5,7 +5,7 @@ import java.util.concurrent.ThreadLocalRandom;
 import java.util.stream.DoubleStream;
 
 /**
- * Created by Тимакс on 01.02.2016.
+ * Created by tisachenko on 01.02.2016.
  */
 public class MonteCarlo {
     public static final long SIZE = 1_000_000_000;
