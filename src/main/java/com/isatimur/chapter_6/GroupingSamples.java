@@ -1,7 +1,7 @@
 package com.isatimur.chapter_6;
 
-import com.isatimur.Dish;
-import com.isatimur.StreamMenu;
+import com.isatimur.chapter_4.Dish;
+import com.isatimur.chapter_4.StreamMenu;
 
 import java.util.*;
 import java.util.stream.IntStream;

@@ -1,4 +1,7 @@
-package com.isatimur;
+package com.isatimur.chapter_5;
+
+import com.isatimur.chapter_4.Dish;
+import com.isatimur.chapter_4.StreamMenu;
 
 import java.util.Arrays;
 import java.util.OptionalInt;

@@ -1,4 +1,4 @@
-package com.isatimur;
+package com.isatimur.chapter_4;
 
 /**
  * Created by tisachenko on 14.01.2016.

@@ -1,4 +1,4 @@
-package com.isatimur;
+package com.isatimur.chapter_5;
 
 import java.util.stream.IntStream;
 import java.util.stream.LongStream;

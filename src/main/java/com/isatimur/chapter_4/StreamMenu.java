@@ -1,4 +1,4 @@
-package com.isatimur;
+package com.isatimur.chapter_4;
 
 import java.util.Arrays;
 import java.util.Comparator;
