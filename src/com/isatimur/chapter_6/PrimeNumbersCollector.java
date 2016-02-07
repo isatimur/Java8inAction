@@ -9,6 +9,22 @@ import java.util.stream.Collector;
  */
 public class PrimeNumbersCollector implements Collector<Integer, Map<Boolean, List<Integer>>, Map<Boolean, List<Integer>>> {
 
+    public static <A> List<A> takeWhile(List<A> list, Predicate<A> p) {
+        int i = 0;
+        for (A item : list) {
+            if (!p.test(item)) {
+                return list.subList(0, i);
+            }
+            i++;
+        }
+        return list;
+    }
+
+    public static boolean isPrime(List<Integer> prime, int candidate) {
+        int candidateRoot = (int) Math.sqrt((double) candidate);
+        return takeWhile(prime, i -> i <= candidateRoot).stream().noneMatch(p -> candidate % p == 0);
+    }
+
     @Override
     public Supplier<Map<Boolean, List<Integer>>> supplier() {
         return () -> new HashMap<Boolean, List<Integer>>() {{
@@ -41,21 +57,5 @@ public class PrimeNumbersCollector implements Collector<Integer, Map<Boolean, Li
     @Override
     public Set<Characteristics> characteristics() {
         return Collections.unmodifiableSet(EnumSet.of(Characteristics.IDENTITY_FINISH));
-    }
-
-    public static <A> List<A> takeWhile(List<A> list, Predicate<A> p) {
-        int i = 0;
-        for (A item : list) {
-            if (!p.test(item)) {
-                return list.subList(0, i);
-            }
-            i++;
-        }
-        return list;
-    }
-
-    public static boolean isPrime(List<Integer> prime, int candidate) {
-        int candidateRoot = (int) Math.sqrt((double) candidate);
-        return takeWhile(prime, i -> i <= candidateRoot).stream().noneMatch(p -> candidate % p == 0);
     }
 }

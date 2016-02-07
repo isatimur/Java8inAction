@@ -10,6 +10,16 @@ import java.util.stream.DoubleStream;
 public class MonteCarlo {
     public static final long SIZE = 1_000_000_000;
 
+    public static void main(String[] args) {
+        MonteCarlo carlo = new MonteCarlo();
+//        System.out.println("Get Pi by using Old School!");
+//        System.out.println(carlo.getPiOldSchool());
+        System.out.println("Get Pi by using Zip!");
+        System.out.println(carlo.getPiZipBoxed());
+        System.out.println("Get Pi by using DoubleStreamZip!");
+        System.out.println(carlo.getPiZipDouble());
+    }
+
     public double getPiOldSchool() {
         long cnt = 0;
         for (long i = 0; i < SIZE; i++) {
@@ -34,19 +44,8 @@ public class MonteCarlo {
     public double getPiZipDouble() {
         DoubleStream as = new SplittableRandom().doubles(SIZE);
         DoubleStream bs = new SplittableRandom().doubles(SIZE);
-        long cnt = Zipper.zip(as, bs, (x, y) -> (double)x * (double)x + (double)y * (double)y).filter(x -> x < 1.0).count();
+        long cnt = Zipper.zip(as, bs, (x, y) -> (double) x * (double) x + (double) y * (double) y).filter(x -> x < 1.0).count();
         return 4.0 * cnt / SIZE;
-    }
-
-
-    public static void main(String[] args) {
-        MonteCarlo carlo = new MonteCarlo();
-//        System.out.println("Get Pi by using Old School!");
-//        System.out.println(carlo.getPiOldSchool());
-        System.out.println("Get Pi by using Zip!");
-        System.out.println(carlo.getPiZipBoxed());
-        System.out.println("Get Pi by using DoubleStreamZip!");
-        System.out.println(carlo.getPiZipDouble());
     }
 
 }
