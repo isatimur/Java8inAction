@@ -1,4 +1,7 @@
-package com.isatimur;
+package com.isatimur.chapter_6;
+
+import com.isatimur.Dish;
+import com.isatimur.StreamMenu;
 
 import java.util.*;
 import java.util.stream.IntStream;
@@ -162,22 +165,42 @@ public class GroupingSamples {
 
         int howManyDishesSize = menuStream.stream().collect(collectingAndThen(toList(), List::size));
 
+        System.out.println("=================================\n" +
+                "Own collector interface");
+
+        List<Dish> dishes = StreamMenu.menu.stream().collect(new ToListCollector<Dish>());
+        dishes.forEach(s -> System.out.println(s));
+
+        //another example of the same interface
+        System.out.println("//another example of the same interface");
+        List<Dish> dishesAnother = StreamMenu.menu.stream().collect(ArrayList::new, ArrayList::add, ArrayList::addAll);
+        dishes.forEach(s -> System.out.println(s));
 
 
+        System.out.println("////////////////////////////\n" +
+                "New collectore implementation");
+        System.out.println(new GroupingSamples().partitionByPrimesWithCustomCollector(20));
 
     }
 
-    public boolean isPrime(int candidate) {
+    public static boolean isPrime(int candidate) {
         int candidateRoot = (int) Math.sqrt((double) candidate);
         return IntStream.rangeClosed(2, candidateRoot).noneMatch(i -> candidate % i == 0);
     }
+//this is the first try
+//    public static boolean isPrime(List<Integer> primes, int candidate) {
+//        return primes.stream().noneMatch(i -> candidate % i == 0);
+//    }
 
-    public Map<Boolean, List<Integer>> partitionPrimes(int n) {
+    public static Map<Boolean, List<Integer>> partitionPrimes(int n) {
         return IntStream.rangeClosed(2, n).boxed()
                 .collect(
                         partitioningBy(candidate -> isPrime(candidate)));
     }
 
+    public static Map<Boolean, List<Integer>> partitionByPrimesWithCustomCollector(int n) {
+        return IntStream.rangeClosed(2, n).boxed().collect(new PrimeNumbersCollector());
+    }
 
     public static enum CaloricLevel {DIET, NORMAL, FAT}
 }
