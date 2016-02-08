@@ -1,4 +1,4 @@
-package com.isatimur;
+package com.isatimur.chapter_2;
 
 import java.util.ArrayList;
 import java.util.Arrays;

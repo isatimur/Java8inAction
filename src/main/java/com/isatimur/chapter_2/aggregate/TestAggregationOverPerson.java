@@ -1,4 +1,4 @@
-package com.isatimur.aggregate;
+package com.isatimur.chapter_2.aggregate;
 
 import java.util.List;
 import java.util.stream.Stream;
@@ -22,5 +22,9 @@ public class TestAggregationOverPerson {
         System.out.println(integer);
         System.out.println(integer2);
 
+
+//        Collection ordered = Arrays.asList("a1", "a2", "a2", "a3", "a1", "a2", "a2");
+//        Collection nonOrdered = new HashSet<>(ordered);
+//        System.out.println(nonOrdered);
     }
 }

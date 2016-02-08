@@ -1,4 +1,4 @@
-package com.isatimur.aggregate;
+package com.isatimur.chapter_2.aggregate;
 
 /**
  * Created by tisachenko on 21.01.2016.
